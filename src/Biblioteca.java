@@ -67,4 +67,29 @@ public class Biblioteca {
     public List<Libro<?>> getListaLibri() {
         return listaLibri;
     }
+
+    public void stampaUtenti(){
+        for (String u : utentiRegistrati){
+            System.out.println(u);
+        }
+    }
+
+    public void stampaPrestiti(){
+        for (Map.Entry<String, Stack<Libro<?>>> prestito : listaUtentiPrestiti.entrySet()){
+            String chiave = prestito.getKey();
+            Stack<Libro<?>> valore = prestito.getValue();
+            System.out.print("I libri prestati a " + chiave + " sono: ");
+            for (Libro<?> libro : valore){
+                System.out.print(libro.getNome() + ", ");
+            }
+            System.out.println();
+        }
+    }
+
+    public  void stampaResi(){
+        System.out.println("I resi sono: ");
+        for(Libro<?> libro : resi){
+            System.out.println("Nome: " + libro.getNome() + ", codice: " + libro.getCodice() + ", costo: " + libro.getCosto());
+        }
+    }
 }
