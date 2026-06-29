@@ -57,4 +57,14 @@ public class Biblioteca {
         System.out.println("L'utente " +  utente +  " ha restituito il libro");
 
     }
+
+    public void stampaLibri(){
+        for (Libro<?> libro : listaLibri){
+            System.out.println("Nome: " + libro.getNome() + ", codice: " + libro.getCodice() + ", costo: " + libro.getCosto());
+        }
+    }
+
+    public List<Libro<?>> getListaLibri() {
+        return listaLibri;
+    }
 }
