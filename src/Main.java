@@ -15,6 +15,7 @@ public class Main {
         biblioteca.aggiungiLibro(libro3);
 
         biblioteca.stampaLibri();
+        System.out.println();
 
         ordinabile listaOrdinata = new ordinabile() {
             @Override
@@ -38,4 +39,30 @@ public class Main {
 
         listaOrdinata.ordinaPerTitolo(biblioteca.getListaLibri());
         biblioteca.stampaLibri();
+        System.out.println();
+
+        biblioteca.rimuoviLibro(libro1);
+        biblioteca.stampaLibri();
+        System.out.println();
+
+        biblioteca.registraUtente("Mario");
+        biblioteca.registraUtente("Giovanni");
+
+        biblioteca.stampaUtenti();
+        System.out.println();
+
+        biblioteca.prestaLibro("Mario", libro2);
+        biblioteca.prestaLibro("Mario", libro3);
+        biblioteca.stampaLibri(); //vuota
+
+        biblioteca.stampaPrestiti();
+        System.out.println();
+
+        biblioteca.restauraLibro("Mario");
+        biblioteca.stampaPrestiti();
+        System.out.println();
+        biblioteca.stampaResi();
+
+
+
     }}
