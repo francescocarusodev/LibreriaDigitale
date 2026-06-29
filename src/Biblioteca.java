@@ -59,6 +59,7 @@ public class Biblioteca {
     }
 
     public void stampaLibri(){
+        System.out.println("I LIBRI DISPONIBILI SONO:");
         for (Libro<?> libro : listaLibri){
             System.out.println("Nome: " + libro.getNome() + ", codice: " + libro.getCodice() + ", costo: " + libro.getCosto());
         }
@@ -69,12 +70,14 @@ public class Biblioteca {
     }
 
     public void stampaUtenti(){
+        System.out.println("GLI UTENTI DISPONIBILI SONO:");
         for (String u : utentiRegistrati){
             System.out.println(u);
         }
     }
 
     public void stampaPrestiti(){
+        System.out.println("I PRESTITI ATTUALI SONO:");
         for (Map.Entry<String, Stack<Libro<?>>> prestito : listaUtentiPrestiti.entrySet()){
             String chiave = prestito.getKey();
             Stack<Libro<?>> valore = prestito.getValue();
@@ -87,7 +90,7 @@ public class Biblioteca {
     }
 
     public  void stampaResi(){
-        System.out.println("I resi sono: ");
+        System.out.println("I RESI ATTUALI SONO: ");
         for(Libro<?> libro : resi){
             System.out.println("Nome: " + libro.getNome() + ", codice: " + libro.getCodice() + ", costo: " + libro.getCosto());
         }
